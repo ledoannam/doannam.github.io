@@ -1,0 +1,353 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<link rel="shortcut icon" type="image/x-icon" href="./favicon.ico" />
+	<meta name="description" content="" />
+	<meta name="keywords" content="" />
+	<title>Tết Canh Tý 2020</title>
+	<link rel="stylesheet" type="text/css" href="css/style.css" />
+    	<link rel="stylesheet" type="text/css" href="css/demo.css" />
+	<link rel="stylesheet" type="text/css" href="css/green.css" media="screen" />
+	<link rel="stylesheet" type="text/css" href="scripts/styleshwitcher.css" media="screen" />
+	<script type="text/javascript" src="scripts/jquery.countdown.js"></script>
+    	<script type="text/javascript" src="scripts/tet.js"></script>
+	<link rel="Shortcut Icon" href="favicon.ico" type="image/x-icon" />
+
+<script>
+var pictureSrc ="images/hoamai.png"; //the location of the snowflakes
+var pictureWidth = 40; //the width of the snowflakes
+var pictureHeight = 40; //the height of the snowflakes
+var numFlakes = 10; //the number of snowflakes
+var downSpeed = 0.01; //the falling speed of snowflakes (portion of screen per 100 ms)
+var lrFlakes = 10; //the speed that the snowflakes should swing from side to side
+
+
+if( typeof( numFlakes ) != 'number' || Math.round( numFlakes ) != numFlakes || numFlakes < 1 ) { numFlakes = 10; }
+
+//draw the snowflakes
+for( var x = 0; x < numFlakes; x++ ) {
+if( document.layers ) { //releave NS4 bug
+document.write('<layer id="snFlkDiv'+x+'"><imgsrc="'+pictureSrc+'" height="'+pictureHeight+'"width="'+pictureWidth+'" alt="*" border="0"></layer>');
+} else {
+document.write('<div style="position:absolute;"id="snFlkDiv'+x+'"><img src="'+pictureSrc+'"height="'+pictureHeight+'" width="'+pictureWidth+'" alt="*"border="0"></div>');
+}
+}
+
+//calculate initial positions (in portions of browser window size)
+var xcoords = new Array(), ycoords = new Array(), snFlkTemp;
+for( var x = 0; x < numFlakes; x++ ) {
+xcoords[x] = ( x + 1 ) / ( numFlakes + 1 );
+do { snFlkTemp = Math.round( ( numFlakes - 1 ) * Math.random() );
+} while( typeof( ycoords[snFlkTemp] ) == 'number' );
+ycoords[snFlkTemp] = x / numFlakes;
+}
+
+//now animate
+function flakeFall() {
+if( !getRefToDivNest('snFlkDiv0') ) { return; }
+var scrWidth = 0, scrHeight = 0, scrollHeight = 0, scrollWidth = 0;
+//find screen settings for all variations. doing this every time allows for resizing and scrolling
+if( typeof( window.innerWidth ) == 'number' ) { scrWidth = window.innerWidth; scrHeight = window.innerHeight; } else {
+if( document.documentElement && (document.documentElement.clientWidth ||document.documentElement.clientHeight ) ) {
+scrWidth = document.documentElement.clientWidth; scrHeight = document.documentElement.clientHeight; } else {
+if( document.body && ( document.body.clientWidth || document.body.clientHeight ) ) {
+scrWidth = document.body.clientWidth; scrHeight = document.body.clientHeight; } } }
+if( typeof( window.pageYOffset ) == 'number' ) { scrollHeight = pageYOffset; scrollWidth = pageXOffset; } else {
+if( document.body && ( document.body.scrollLeft ||document.body.scrollTop ) ) { scrollHeight = document.body.scrollTop;scrollWidth = document.body.scrollLeft; } else {
+if(document.documentElement && (document.documentElement.scrollLeft ||document.documentElement.scrollTop ) ) { scrollHeight =document.documentElement.scrollTop; scrollWidth =document.documentElement.scrollLeft; } }
+}
+//move the snowflakes to their new position
+for( var x = 0; x < numFlakes; x++ ) {
+if( ycoords[x] * scrHeight > scrHeight - pictureHeight ) { ycoords[x] = 0; }
+var divRef = getRefToDivNest('snFlkDiv'+x); if( !divRef ) { return; }
+if( divRef.style ) { divRef = divRef.style; } var oPix = document.childNodes ? 'px' : 0;
+divRef.top = ( Math.round( ycoords[x] * scrHeight ) + scrollHeight ) + oPix;
+divRef.left = ( Math.round( ( ( xcoords[x] * scrWidth ) - (pictureWidth / 2 ) ) + ( ( scrWidth / ( ( numFlakes + 1 ) * 4 ) ) * (Math.sin( lrFlakes * ycoords[x] ) - Math.sin( 3 * lrFlakes * ycoords[x]) ) ) ) + scrollWidth ) + oPix;
+ycoords[x] += downSpeed;
+}
+}
+
+//DHTML handlers
+function getRefToDivNest(divName) {
+if( document.layers ) { return document.layers[divName]; } //NS4
+if( document[divName] ) { return document[divName]; } //NS4 also
+if( document.getElementById ) { return document.getElementById(divName); } //DOM (IE5+, NS6+, Mozilla0.9+, Opera)
+if( document.all ) { return document.all[divName]; } //Proprietary DOM - IE4
+return false;
+}
+
+window.setInterval('flakeFall();',100);
+</script>
+</head>
+
+
+
+
+
+<body>
+
+<img src="img/hoamai-right.png" style="position: fixed; background:none; padding: 0; border: none; -webkit-border-radius: 0; bottom: 0; right:0;\">
+<img src="img/hoamai-left.png" style="position: fixed; background:none; padding: 0; border: none; -webkit-border-radius: 0; bottom: 0; left:0;\">
+
+
+<div id="outer-container"><!-- Parent Container -->
+
+
+
+
+
+
+<div style="position: fixed; top: 0px; left: 0px;"> 
+<embed src="flash/banner-left.swf" type="application/x-shockwave-flash" allowscriptaccess="always" menu="false" wmode="transparent" flashvars="username=BQTC" width="130" height="400"> 
+</div>
+
+
+
+
+
+
+
+
+
+<div style="position: fixed; top: 0px; right: 0px;"> 
+<embed src="flash/banner-right.swf" type="application/x-shockwave-flash" allowscriptaccess="always" menu="false" wmode="transparent" flashvars="username=BQTC" width="130" height="400"> 
+ </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<style>
+
+
+			.ribbon {
+				display:inline-block;
+				color:white;
+				font-weight:bold;
+			}
+
+			.ribbon:after, .ribbon:before {
+				margin-top:0.5em;
+				content: "";
+				float:left;
+				border:1.5em solid #FFCC33;
+				margin-top:15px;
+			}
+
+			.ribbon:after {
+				border-right-color:transparent;
+			}
+
+			.ribbon:before {
+				border-left-color:transparent;
+			}
+
+			.ribbon a:link, .ribbon a:visited { 
+				color:red;
+				text-decoration:none;
+			    float:left;
+			    height:3.5em;
+				overflow:hidden;
+			}
+
+			.ribbon span {
+				background:#FFCC33;
+				display:inline-block;
+				line-height:3em;
+				padding:0 1em;
+				margin-top:0.5em;
+				position:relative;
+
+				-webkit-transition: background-color 0.2s, margin-top 0.2s;  /* Saf3.2+, Chrome */
+				-moz-transition: background-color 0.2s, margin-top 0.2s;  /* FF4+ */
+				-ms-transition: background-color 0.2s, margin-top 0.2s;  /* IE10 */
+				-o-transition: background-color 0.2s, margin-top 0.2s;  /* Opera 10.5+ */
+				transition: background-color 0.2s, margin-top 0.2s;
+			}
+
+			.ribbon a:hover span {
+				background:#CC0000;
+				margin-top:0;
+				color:yellow;
+			}
+
+.ribbon span:before {
+	content: "";
+	position:absolute;
+	top:3em;
+	left:0;
+	border-right:0.5em solid #9B8651;
+	border-bottom:0.5em solid #FFCC33;
+}
+
+.ribbon span:after {
+	content: "";
+	position:absolute;
+	top:3em;
+	right:0;
+	border-left:0.5em solid #9B8651;
+	border-bottom:0.5em solid #FFCC33;
+}
+		</style>
+	</head>
+
+<center>
+<br>
+		<div class="ribbon">
+			<a href="https://www.google.com/search?q=tết+mậu+tuất+2018" target="_blank"><span>Tết Kỷ Hợi 2019</span></a>
+			<a href="https://www.facebook.com/ledoannam.abc" target="_blank" ><span>Facebook</span></a>
+			<a href="/" target="_blank"><span>Share Facebook</span></a>
+		</div>
+	</center>
+
+
+<br><br><br>
+
+
+
+
+
+
+
+
+<div id="container"><!-- Main Container for Flip Timer and Tab controls -->
+
+
+
+<style>
+img{
+-webkit-transition: 0.5s;
+-moz-transition: 0.5s;
+-o-transition: 0.5s;
+-ms-transition: 0.5s;
+transition: 0.5s;
+}
+img:hover{
+-webkit-transform: scale(1.4);
+
+-moz-transform: scale(1.4);
+-o-transform: scale(1.4);
+-ms-transform: scale(1.4);
+transform: scale(1.4);
+}
+</style>
+
+<center>
+
+
+	<section class="main"><div class="content"><a style="position: fixed; bottom:-10px; right:-10px;"><embed src="flash/phao.swf" width="1300" height="150" type="application/x-shockwave-flash" wmode="transparent" allowscriptaccess="never"></embed></a></div>
+
+		<ul class="center">
+
+
+		<li>
+		<div class="hover-circle effect1">
+			<div class="overlay">
+				<div style="text-shadow: 5px 5px 5px red; color: yellow;" class="info">
+					<h3 style="text-shadow: 5px 5px 5px red; color: yellow;">2019</h3>
+					<h4>Cung chúc tân niên</h4>
+<h4>Gia đạo bình yên</h4>
+<h4>Chồng thảo vợ hiền</h4>
+<h4>Ấm êm toàn diện.</h4>
+				</div>
+			</div>
+			<img src="img/trai.jpg" />
+		</div>
+		</li>
+        		<li>
+		<div class="hover-circle effect1">
+			<div class="overlay">
+			<div style="text-shadow: 5px 5px 5px red; color: yellow;" class="info">
+					<h3 style="text-shadow: 5px 5px 5px red; color: yellow;">2019</h3>
+				<h4>Cung chúc tân niên</h4>
+<h4>Làm ăn thuận tiện</h4>
+<h4>Kiếm được nhiều tiền</h4>
+<h4>Giầu sang vinh hiển.</h4>
+				</div>
+			</div>
+			<img src="img/center.jpg" />
+		</div>
+		</li>
+		<li>
+		<div class="hover-circle effect1">
+			<div class="overlay">
+	<div style="text-shadow: 5px 5px 5px red; color: yellow;" class="info">
+					<h3 style="text-shadow: 5px 5px 5px red; color: yellow;">2018</h3>
+					
+                    <h4>Cung chúc tân niên</h4>
+<h4>Thành đạt triền miên</h4>
+<h4>Sự nghiệp phát triển</h4>
+<h4>Công danh thẳng tiến.</h4>
+                    
+				</div>
+			</div>
+			<img src="img/phai.jpg" />
+		</div>
+		</li>
+		<ul>
+	</section>
+
+</center>
+
+
+
+
+
+<body onload="getTime()">
+    
+    	
+	
+        		<div id="countdown">
+				<div class="days">
+					<img height="40" src="images/0c.png" alt="" width="23" name="x" />
+					<img height="40" src="images/0c.png" alt="" width="23" name="a" />
+					<img height="40" src="images/0c.png" alt="" width="23" name="b" />
+					<img src="images/days.png" width="35" height="17" class="title1" alt="" />
+				</div>
+				<div class="hours">
+					<img height="40" src="images/0c.png" alt="" width="23" name="y" />
+					<img height="40" src="images/0c.png" alt="" width="23" name="z" />
+					<img src="images/hours.png" width="39" height="13" class="title" alt="" />
+				</div>
+				<div class="minutes">
+					<img height="40" src="images/0c.png" alt="" width="23" name="d" />
+					<img height="40" src="images/0c.png" alt="" width="23" name="e" />
+					<img src="images/minutes.png" width="53" height="13" class="title" alt="" />
+				</div>
+				<div class="seconds">
+					<img height="40" src="images/0c.png" alt="" width="23" name="g" />
+					<img height="40" src="images/0c.png" alt="" width="23" name="h" />
+					<img src="images/seconds.png" width="53" height="13" class="title" alt="" />
+				</div>
+			</div>
+
+
+
+				
+</body>
+
+
+
+
+</div><!-- End of Container -->
+
+</div><!-- End of Outer Container -->
+<div class="content"><a style="position: fixed; bottom:-10px; right:-10px;"><embed src="flash/phao.swf" width="1300" height="150" type="application/x-shockwave-flash" wmode="transparent" allowscriptaccess="never"></embed></a></div>
+
+
+</body>
+<audio src="nhac.mp3" autoplay loop></audio>
+
+</html>

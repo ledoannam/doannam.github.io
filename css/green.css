@@ -1,0 +1,69 @@
+/* Green Style */
+
+
+/*----------------------------------------------*/
+/* Body*/
+/*----------------------------------------------*/
+
+body
+{
+	background: url(../images/bg_green.jpg) repeat;}
+
+
+
+/*----------------------------------------------*/
+/* Text Header */
+/*----------------------------------------------*/	
+#ribbon .header
+{
+	background: url(../images/header_green.png) no-repeat;}
+	
+
+	
+/*----------------------------------------------*/
+/* Ribbon */
+/*----------------------------------------------*/
+
+#ribbon
+{
+	background: url(../images/ribbon_green.png) center no-repeat;}
+
+
+/*----------------------------------------------*/
+/* Countdown*/
+/*----------------------------------------------*/
+
+#countdown li.days, li.hours, li.minutes, li.seconds
+{
+	background: url(../images/bg_clock_green.jpg) no-repeat;
+	color: #919977;}
+
+
+/*----------------------------------------------*/
+/* Progress Bar */
+/*----------------------------------------------*/
+
+.progressbar 
+{
+	background: url(../images/bar_green.gif) repeat-x;}
+
+
+/*----------------------------------------------*/
+/* Notify */
+/*----------------------------------------------*/
+
+#form
+{
+	background-color: #c0c8a4;}
+
+#form .submit {
+	background: url(../images/button_green.png) left no-repeat;
+	background-position: 0px 0px;}
+
+#form .submit:hover {
+	border: 0;
+	background-position: 0px -38px;}
+
+/*----------------------------------------------*/
+/* Icons */
+/*----------------------------------------------*/
